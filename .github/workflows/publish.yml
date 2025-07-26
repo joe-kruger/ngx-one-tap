@@ -1,3 +1,10 @@
+on:
+  push:
+    branches:
+      - main
+      - master
+      - task/*
+
 jobs:
   publish:
     runs-on: ubuntu-latest
