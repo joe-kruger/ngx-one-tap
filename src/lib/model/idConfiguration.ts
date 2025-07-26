@@ -10,6 +10,11 @@ export interface IdConfiguration {
   client_id: string;
 
   /**
+   * This field is the color scheme applied to the One Tap prompt. 
+   */
+  color_scheme?: 'light' | 'dark' | 'default';
+
+  /**
    * This field determines if an ID token is automatically returned without any user
    * interaction when there's only one Google session that has approved your app before. The default value is false
    */
@@ -102,4 +107,45 @@ export interface IdConfiguration {
    * The One Tap UI is removed before the callback is invoked.
    */
   immediate_iframe_close_callback?: Function;
+
+  /**
+   * This field is used to enable the Identity Toolkit Protocol (ITP) support.
+   * If set to true, the One Tap prompt will be displayed in the ITP mode.
+   * The default value is false.
+   */
+  itp_support?: boolean;
+
+  /**
+   * This field is used to pass the user's email address to the One Tap prompt.
+   * If set, the One Tap prompt will show the user's email address as a hint.
+   */
+  login_hint?: string;
+
+  /**
+   * This field is used to pass the user's hosted domain to the One Tap prompt.
+   * If set, the One Tap prompt will show the user's hosted domain as a hint.
+   */
+  hd?: string;
+
+  /**
+   * This field is used to enable the Federated Credential Management API (FedCM) support.
+   * If set to true, the One Tap prompt will use FedCM for the prompt.
+   * The default value is false.
+   */
+  use_fedcm_for_prompt?: boolean;
+
+  /**
+   * This field is used to enable the Federated Credential Management API (FedCM) support
+   * for the Sign In With Google button.
+   * If set to true, the Sign In With Google button will use FedCM for the prompt.
+   * The default value is false.
+   */
+  use_fedcm_for_button?: boolean; 
+
+  /**
+   * This field is used to enable the Sign In With Google button.
+   * If set to true, the Sign In With Google button will be displayed.
+   * The default value is false.
+   */
+  button_auto_select?: boolean;
 }

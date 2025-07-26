@@ -1,6 +1,6 @@
 {
-  "name": "ngx-one-tap",
-  "description": "This library is a wrapper around the Google One Tap SDK for Angular",
+  "name": "@joe-kruger/ngx-one-tap",
+  "description": "This library is a wrapper around the Google One Tap SDK for Angular with FEDCM support (Fork of mpreziuso/ngx-one-tap)",
   "license": "MIT",
   "keywords": [
     "one tap",
@@ -9,15 +9,22 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/mpreziuso/ngx-one-tap.git"
+    "url": "https://github.com/joe-kruger/ngx-one-tap.git"
   },
-  "bugs": "https://github.com/mpreziuso/ngx-one-tap/issues",
-  "version": "0.2.0",
+  "bugs": "https://github.com/joe-kruger/ngx-one-tap/issues",
+  "version": "0.3.0",
   "peerDependencies": {
-    "@angular/common": "^13.2.0",
-    "@angular/core": "^13.2.0"
+    "@angular/common": "^14.2.0",
+    "@angular/core": "^14.2.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "scripts": {
+    "build": "tsc",
+    "prepare": "npm run build"
   }
 }

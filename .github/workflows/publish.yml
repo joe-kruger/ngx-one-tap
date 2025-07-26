@@ -1,0 +1,19 @@
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Set up Node + GitHub Packages registry
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '16'
+          registry-url: 'https://npm.pkg.github.com/'
+
+      # Authenticate using the secret
+      - name: Authenticate to GitHub Packages
+        run: npm config set //npm.pkg.github.com/:_authToken ${{ secrets.GH_PA_TOKEN }}
+
+      - run: npm ci
+      - run: npm run build
+      - run: npm publish
